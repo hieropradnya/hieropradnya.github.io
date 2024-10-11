@@ -1,0 +1,73 @@
+/* font styling */
+.roboto-mono-reguler {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-mono-bold {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+html {
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #1a191d;
+}
+
+h1.myname {
+  font-size: 10vh;
+  text-shadow: 1px 3px 11px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  h1.myname {
+    font-size: 7vh;
+  }
+}
+
+@media (max-width: 480px) {
+  h1.myname {
+    font-size: 5vh;
+  }
+}
+
+/* end font styling */
+
+.hero {
+  position: relative;
+  background: url("https://img.freepik.com/premium-photo/abstract-bokeh-light-background_161362-45173.jpg") no-repeat center center;
+  background-size: cover;
+  color: white;
+  height: 100vh;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+section {
+  padding-top: 5rem;
+  color: #fefefe;
+}
