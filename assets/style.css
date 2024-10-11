@@ -34,6 +34,17 @@ body {
   font-weight: 500;
 }
 
+.hero p span {
+  border-right: 3px solid white;
+  animation: cursor 0.4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 6vw;
