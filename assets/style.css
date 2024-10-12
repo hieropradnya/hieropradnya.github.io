@@ -68,6 +68,10 @@ body {
 
 /* end font styling */
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 .hero {
   position: relative;
   background: url("https://img.freepik.com/premium-photo/abstract-bokeh-light-background_161362-45173.jpg") no-repeat center center;
@@ -95,4 +99,47 @@ body {
 section {
   padding-top: 5rem;
   color: #fefefe;
+}
+
+button {
+  border-radius: 0;
+}
+
+.card {
+  background-color: rgba(136, 136, 136, 0.06);
+  color: white;
+  overflow: hidden;
+}
+
+.card-img-top {
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
+}
+
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.card-img-top {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /*jumlah baris*/
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ccc;
 }
