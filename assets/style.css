@@ -2,7 +2,7 @@
 .roboto-mono-reguler {
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -21,6 +21,28 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   background-color: #1a191d;
+}
+
+a {
+  color: white;
+}
+
+a.text-lightseagreen {
+  color: lightseagreen;
+}
+
+a:hover {
+  color: lightgrey;
+}
+
+a.larger {
+  transition: transform 0.3s ease, font-weight 0.3s ease;
+}
+
+a.larger:hover {
+  display: inline-block;
+  /* font-weight: 600; */
+  transform: scale(1.05);
 }
 
 .hero h1 {
@@ -83,11 +105,12 @@ body {
 .hero::before {
   content: "";
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #1a191d 100%);
   z-index: 1;
 }
 
@@ -109,6 +132,39 @@ button {
   background-color: rgba(136, 136, 136, 0.06);
   color: white;
   overflow: hidden;
+}
+
+.btn-wrapper {
+  position: relative;
+  height: 30px;
+  overflow: hidden;
+}
+
+.btn-text,
+.btn-hover-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: transform 0.4s ease;
+}
+
+.btn-hover-text {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.btn-text {
+  transform: translateY(0);
+}
+
+.card:hover .btn-text {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.card:hover .btn-hover-text {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .card-img-top {
@@ -135,11 +191,31 @@ button {
 
 .card-text {
   display: -webkit-box;
-  -webkit-line-clamp: 2; /*jumlah baris*/
-  -webkit-box-orient: vertical;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: box;
+
+  -webkit-line-clamp: 2; /* For WebKit-based browsers */
+  line-clamp: 2; /* Standard property */
+
+  -webkit-box-orient: vertical; /* For WebKit-based browsers */
+  box-orient: vertical;
+
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 400;
   color: #ccc;
+}
+
+section#contact {
+  background-color: black;
+  padding-bottom: 1rem;
+  padding-top: 4rem;
+  margin-bottom: 0;
+}
+
+footer p {
+  margin-bottom: 0;
+  padding: 1.5rem 0 1rem;
 }
