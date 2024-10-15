@@ -45,37 +45,9 @@ a.larger:hover {
   transform: scale(1.05);
 }
 
-.hero {
-  background-attachment: fixed;
-  background-size: 110%;
-  animation: zoomBackground 20s ease infinite;
-}
-
-@keyframes zoomBackground {
-  0% {
-    background-size: 110%;
-  }
-  50% {
-    background-size: 100%;
-  }
-  100% {
-    background-size: 110%;
-  }
-}
-
-.hero h1,
-.hero p {
-  animation: floating 3s ease-in-out infinite;
-}
-
-@keyframes floating {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+.hero a {
+  display: inline-block;
+  font-weight: 600;
 }
 
 .hero h1 {
@@ -89,50 +61,49 @@ a.larger:hover {
   font-weight: 500;
 }
 
-.hero p span {
-  border-right: 3px solid white;
-  animation: cursor 0.4s step-end infinite alternate;
-}
-
-@keyframes cursor {
-  50% {
-    border-color: transparent;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 6vw;
-  }
-  .hero p {
-    font-size: 3vw;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 8vw;
-  }
-  .hero p {
-    font-size: 4vw;
-  }
-  .hero a {
-    font-size: 4vw;
-  }
-}
-
 /* end font styling */
 
 ::-webkit-scrollbar {
   width: 0px;
 }
 
+.light {
+  position: fixed;
+  border-radius: 50%;
+  width: 1px;
+  height: 1px;
+  box-shadow: 0 0 9999px 200px rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: -9999;
+  transition: box-shadow 0.3s ease;
+}
+
 .hero {
   position: relative;
-  background: url("https://img.freepik.com/premium-photo/abstract-bokeh-light-background_161362-45173.jpg") no-repeat center center;
-  background-size: cover;
+  background: url("/assets/img/bg.jpg") no-repeat center center;
   color: white;
   height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  animation: zoomBackground 20s ease infinite;
+}
+
+@keyframes zoomBackground {
+  0% {
+    background-size: 110%;
+  }
+  50% {
+    background-size: 120%;
+  }
+  100% {
+    background-size: 110%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    animation: none;
+  }
 }
 
 .hero::before {
@@ -147,9 +118,36 @@ a.larger:hover {
   z-index: 1;
 }
 
+.hero p span {
+  border-right: 3px solid white;
+  animation: cursor 0.4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
+}
+
+.hero h1,
+.hero a,
+.hero p {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 section {
@@ -157,14 +155,23 @@ section {
   color: #fefefe;
 }
 
+section#about {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0) 80%, #1a191d 100%);
+}
+
 button {
   border-radius: 0;
 }
 
-.card {
+#project .card {
   background-color: rgba(136, 136, 136, 0.1);
   color: white;
   overflow: hidden;
+
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .btn-wrapper {
@@ -253,23 +260,6 @@ footer p {
   padding: 0 0 1rem;
 }
 
-/* .light {
-  position: fixed;
-  border-radius: 50%;
-  width: 1px;
-  height: 1px;
-  box-shadow: 0 0 9999px 100px rgba(255, 255, 255, 0.3);
-  pointer-events: none;
-  z-index: -9999;
-  transition: box-shadow 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  .light {
-    opacity: 0;
-  }
-} */
-
 #quoteCarousel .carousel-inner {
   margin-bottom: 1rem;
 }
@@ -279,9 +269,27 @@ footer p {
   height: 5rem;
 }
 
-#hero {
-  width: 100%;
-  height: 100vh; /* Pastikan ada ukuran yang jelas */
-  position: relative; /* Agar partikel dapat ditampilkan di dalam elemen ini */
-  z-index: 99991;
+/* Responsivitas */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 6vw;
+  }
+  .hero p {
+    font-size: 3vw;
+  }
+  .light {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 8vw;
+  }
+  .hero p {
+    font-size: 4vw;
+  }
+  .hero a {
+    font-size: 4vw;
+  }
 }

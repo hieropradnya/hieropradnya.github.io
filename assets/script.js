@@ -47,9 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // untuk senter
-// const light = document.querySelector(".light");
+const light = document.querySelector(".light");
 
-// document.addEventListener("mousemove", (e) => {
-//   light.style.left = `${e.clientX - light.clientWidth / 2}px`;
-//   light.style.top = `${e.clientY - light.clientHeight / 2}px`;
-// });
+document.addEventListener("mousemove", (e) => {
+  light.style.left = `${e.clientX - light.clientWidth / 2}px`;
+  light.style.top = `${e.clientY - light.clientHeight / 2}px`;
+});
