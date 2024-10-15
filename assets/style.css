@@ -72,10 +72,51 @@ a.larger:hover {
   border-radius: 50%;
   width: 1px;
   height: 1px;
-  box-shadow: 0 0 9999px 200px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 9999px 200px rgba(135, 206, 250, 0.1);
   pointer-events: none;
   z-index: -9999;
   transition: box-shadow 0.3s ease;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: white;
+  backdrop-filter: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled .nav-link {
+  color: black;
+}
+
+.navbar.scrolled .navbar-brand {
+  color: black;
+}
+
+.nav-link {
+  color: rgb(112, 216, 216);
+  transition: color 0.3s ease;
+}
+.navbar-brand {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: palevioletred;
+}
+.navbar.scrolled .nav-link:hover {
+  color: lightseagreen;
+}
+
+.navbar-brand:hover {
+  color: white;
+  transition: color 0.3s ease;
 }
 
 .hero {
@@ -83,7 +124,7 @@ a.larger:hover {
   background: url("/assets/img/bg.jpg") no-repeat center center;
   color: white;
   height: 100vh;
-  background-size: cover;
+  background-size: 110%;
   background-attachment: fixed;
   animation: zoomBackground 20s ease infinite;
 }
@@ -93,7 +134,7 @@ a.larger:hover {
     background-size: 110%;
   }
   50% {
-    background-size: 120%;
+    background-size: 115%;
   }
   100% {
     background-size: 110%;
@@ -103,6 +144,7 @@ a.larger:hover {
 @media (max-width: 1000px) {
   .hero {
     animation: none;
+    background-size: cover;
   }
 }
 
@@ -267,6 +309,77 @@ footer p {
   font-style: italic;
   transition: opacity 0.6s ease;
   height: 5rem;
+}
+/* Scroll Down Indicator */
+.scroll-down {
+  z-index: 1;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.8rem;
+  animation: fadeInUp 1s ease-in-out infinite;
+}
+
+.scroll-down span {
+  display: block;
+  margin-bottom: 10px;
+  opacity: 0;
+}
+.scroll-down:hover span {
+  opacity: 1;
+}
+
+.scroll-down .mouse {
+  width: 24px;
+  height: 42px;
+  border: 2px solid white;
+  border-radius: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.scroll-down .mouse-in {
+  width: 6px;
+  height: 10px;
+  background-color: white;
+  border-radius: 3px;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 2s infinite;
+}
+
+/* Keyframes for animation */
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    top: 5px;
+  }
+  50% {
+    opacity: 1;
+    top: 15px;
+  }
+  100% {
+    opacity: 0;
+    top: 25px;
+  }
+}
+
+@keyframes fadeInUp {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Responsivitas */

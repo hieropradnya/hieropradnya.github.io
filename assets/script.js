@@ -53,3 +53,13 @@ document.addEventListener("mousemove", (e) => {
   light.style.left = `${e.clientX - light.clientWidth / 2}px`;
   light.style.top = `${e.clientY - light.clientHeight / 2}px`;
 });
+
+// untuk navbar
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > window.innerHeight / 2) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
