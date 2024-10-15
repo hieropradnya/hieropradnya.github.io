@@ -72,7 +72,7 @@ a.larger:hover {
   border-radius: 50%;
   width: 1px;
   height: 1px;
-  box-shadow: 0 0 9999px 200px rgba(135, 206, 250, 0.1);
+  box-shadow: 0 0 9999px 200px rgba(135, 206, 250, 0.15);
   pointer-events: none;
   z-index: -9999;
   transition: box-shadow 0.3s ease;
@@ -99,11 +99,13 @@ a.larger:hover {
 }
 
 .nav-link {
-  color: rgb(112, 216, 216);
+  /* color: rgb(112, 216, 216); */
+  color: white;
   transition: color 0.3s ease;
 }
 .navbar-brand {
   color: white;
+  /* font-weight: 600; */
   transition: color 0.3s ease;
 }
 
@@ -121,12 +123,12 @@ a.larger:hover {
 
 .hero {
   position: relative;
-  background: url("/assets/img/bg.jpg") no-repeat center center;
+  background: url("/assets/img/bg.webp") no-repeat center center;
   color: white;
   height: 100vh;
   background-size: 110%;
   background-attachment: fixed;
-  animation: zoomBackground 20s ease infinite;
+  animation: zoomBackground 16s ease infinite;
 }
 
 @keyframes zoomBackground {
@@ -138,13 +140,6 @@ a.larger:hover {
   }
   100% {
     background-size: 110%;
-  }
-}
-
-@media (max-width: 1000px) {
-  .hero {
-    animation: none;
-    background-size: cover;
   }
 }
 
@@ -255,7 +250,7 @@ button {
   height: 250px;
 }
 
-.card:hover {
+#project .card:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 .card:hover .card-img-top {
@@ -310,7 +305,7 @@ footer p {
   transition: opacity 0.6s ease;
   height: 5rem;
 }
-/* Scroll Down Indicator */
+
 .scroll-down {
   z-index: 1;
   position: absolute;
@@ -383,6 +378,14 @@ footer p {
 }
 
 /* Responsivitas */
+@media (max-width: 1000px) {
+  .hero {
+    animation: none;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+}
+
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 6vw;
@@ -392,6 +395,10 @@ footer p {
   }
   .light {
     opacity: 0;
+  }
+  #project .card {
+    backdrop-filter: none;
+    box-shadow: none;
   }
 }
 
@@ -404,5 +411,8 @@ footer p {
   }
   .hero a {
     font-size: 4vw;
+  }
+  .scroll-down {
+    bottom: 8%;
   }
 }
