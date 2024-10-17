@@ -61,6 +61,9 @@ a.larger:hover {
   font-weight: 500;
 }
 
+h1 {
+  font-weight: 600;
+}
 /* end font styling */
 
 ::-webkit-scrollbar {
@@ -189,7 +192,7 @@ a.larger:hover {
 
 section {
   padding-top: 5rem;
-  color: #fefefe;
+  color: white;
 }
 
 section#about {
@@ -377,6 +380,91 @@ footer p {
   }
 }
 
+/* Project HTML */
+body.body-project {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url(/assets/img/bg-blur.webp);
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+}
+
+.body-project ul.links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.body-project ul.links li a svg {
+  transition: transform 0.3s;
+}
+
+.body-project ul.links li a:hover svg {
+  transform: scale(1.1);
+}
+
+/* Foto Project */
+.photos-container {
+  width: 100%;
+  max-height: 22rem;
+  overflow-y: auto;
+  border-radius: 8px;
+}
+
+.photos-container .row {
+  gap: 5px;
+}
+
+.photos-container .photo iframe {
+  height: 296px;
+}
+
+.photos-container .photo img,
+.photos-container .photo iframe {
+  width: 100%;
+  cursor: pointer;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+  filter: brightness(0.95);
+  transform: scale(0.95);
+}
+
+.photos-container .photo img:hover,
+.photos-container .photo iframe:hover {
+  transform: scale(1);
+  filter: brightness(1);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.overlay img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+/* End Foto Project */
+
+/*  */
 /* Responsivitas */
 @media (max-width: 1000px) {
   .hero {

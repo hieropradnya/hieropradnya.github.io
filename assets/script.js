@@ -63,3 +63,19 @@ window.addEventListener("scroll", function () {
     navbar.classList.remove("scrolled");
   }
 });
+
+// foto project overlay
+const photos = document.querySelectorAll(".photo img");
+const overlay = document.getElementById("photo-overlay");
+const overlayImage = overlay.querySelector("img");
+
+photos.forEach((photo) => {
+  photo.addEventListener("click", () => {
+    overlayImage.src = photo.src;
+    overlay.classList.add("show");
+  });
+});
+
+overlay.addEventListener("click", () => {
+  overlay.classList.remove("show");
+});
