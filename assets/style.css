@@ -131,7 +131,7 @@ h1 {
   height: 100vh;
   background-size: 110%;
   background-attachment: fixed;
-  animation: zoomBackground 16s ease infinite;
+  animation: zoomBackground 12s ease infinite;
 }
 
 @keyframes zoomBackground {
@@ -383,7 +383,7 @@ footer p {
 /* Project HTML */
 body.body-project {
   min-height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url(/assets/img/bg-blur.webp);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url(/assets/img/bg-blur.webp);
   background-size: cover;
   background-position: center;
   background-attachment: scroll;
@@ -443,7 +443,7 @@ body.body-project {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -502,5 +502,10 @@ body.body-project {
   }
   .scroll-down {
     bottom: 8%;
+  }
+
+  .overlay img {
+    max-width: 100%;
+    max-height: 100%;
   }
 }
