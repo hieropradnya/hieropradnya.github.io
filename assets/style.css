@@ -23,6 +23,13 @@ body {
   background-color: #1a191d;
 }
 
+/* buat AOS bug  */
+html,
+body {
+  overflow-x: hidden !important;
+  width: 100%;
+}
+
 a {
   color: white;
 }
@@ -193,6 +200,7 @@ h1 {
 section {
   padding-top: 5rem;
   color: white;
+  padding-bottom: 5rem;
 }
 
 section#about {
@@ -309,6 +317,35 @@ footer p {
   height: 5rem;
 }
 
+/* Animasi Tulisan di Hero */
+.hero h1,
+.hero p,
+.hero a {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUpHero 1s ease forwards;
+}
+
+.hero h1 {
+  animation-delay: 0.3s;
+}
+
+.hero p {
+  animation-delay: 0.5s;
+}
+
+.hero a {
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeInUpHero {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animasi ScrollDown di Hero */
 .scroll-down {
   z-index: 1;
   position: absolute;
@@ -319,7 +356,9 @@ footer p {
   color: white;
   font-family: "Roboto Mono", monospace;
   font-size: 0.8rem;
-  animation: fadeInUp 1s ease-in-out infinite;
+  animation: fadeInUpScroll 1s ease-in-out infinite;
+  opacity: 0;
+  animation-delay: 1500ms;
 }
 
 .scroll-down span {
@@ -368,7 +407,7 @@ footer p {
   }
 }
 
-@keyframes fadeInUp {
+@keyframes fadeInUpScroll {
   0%,
   100% {
     transform: translateX(-50%) translateY(10px);
