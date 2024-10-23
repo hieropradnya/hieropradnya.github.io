@@ -30,6 +30,10 @@ body {
   width: 100%;
 }
 
+h6 {
+  font-size: 16px;
+}
+
 a {
   color: white;
 }
@@ -146,7 +150,7 @@ h1 {
     background-size: 110%;
   }
   50% {
-    background-size: 115%;
+    background-size: 116%;
   }
   100% {
     background-size: 110%;
@@ -358,7 +362,7 @@ footer p {
   font-size: 0.8rem;
   animation: fadeInUpScroll 1s ease-in-out infinite;
   opacity: 0;
-  animation-delay: 1500ms;
+  animation-delay: 1200ms;
 }
 
 .scroll-down span {
@@ -389,6 +393,7 @@ footer p {
   left: 50%;
   transform: translateX(-50%);
   animation: scroll 2s infinite;
+  animation-delay: 1200ms;
 }
 
 /* Keyframes for animation */
