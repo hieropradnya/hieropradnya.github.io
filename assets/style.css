@@ -75,6 +75,7 @@ a.larger:hover {
 h1 {
   font-weight: 600;
 }
+
 /* end font styling */
 
 ::-webkit-scrollbar {
@@ -551,5 +552,9 @@ body.body-project {
   .overlay img {
     max-width: 100%;
     max-height: 100%;
+  }
+
+  p.mobile-size {
+    font-size: 4vw;
   }
 }
