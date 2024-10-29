@@ -64,6 +64,26 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// activity
+document.addEventListener("DOMContentLoaded", function () {
+  const viewMoreBtn = document.getElementById("viewMoreBtn");
+  const viewLessBtn = document.getElementById("viewLessBtn");
+  const additionalActivities = document.getElementById("additionalActivities");
+  const viewLessContainer = document.getElementById("viewLessContainer");
+
+  viewMoreBtn.addEventListener("click", function () {
+    additionalActivities.classList.remove("d-none");
+    viewMoreBtn.classList.add("d-none");
+    viewLessContainer.classList.remove("d-none");
+  });
+
+  viewLessBtn.addEventListener("click", function () {
+    additionalActivities.classList.add("d-none");
+    viewMoreBtn.classList.remove("d-none");
+    viewLessContainer.classList.add("d-none");
+  });
+});
+
 // foto project overlay
 const photos = document.querySelectorAll(".photo img");
 const overlay = document.getElementById("photo-overlay");

@@ -451,19 +451,25 @@ footer p {
   min-height: 438px;
 }
 
-#certificateCarousel .carousel-control-prev,
-#certificateCarousel .carousel-control-next {
-  width: 5%;
+.certificates-container {
+  overflow: hidden;
+  max-width: 100%;
 }
 
-#certificateCarousel .carousel-control-prev {
-  left: -5%;
+.certificates-wrapper {
+  transition: transform 0.5s ease;
 }
 
-#certificateCarousel .carousel-control-next {
-  right: -5%;
+.certificate-item {
+  min-width: 300px; /* Atur lebar minimum untuk setiap sertifikat */
+  margin-right: 20px; /* Spasi antar item */
 }
 
+/* Sembunyikan tombol jika tidak perlu */
+#prevBtn,
+#nextBtn {
+  z-index: 1;
+}
 /* Project HTML */
 body.body-project {
   min-height: 100vh;
