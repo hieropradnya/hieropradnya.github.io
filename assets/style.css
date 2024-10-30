@@ -447,29 +447,7 @@ footer p {
   background-color: lightseagreen;
   color: white;
 }
-#certificateCarousel .col-md-4 {
-  min-height: 438px;
-}
 
-.certificates-container {
-  overflow: hidden;
-  max-width: 100%;
-}
-
-.certificates-wrapper {
-  transition: transform 0.5s ease;
-}
-
-.certificate-item {
-  min-width: 300px; /* Atur lebar minimum untuk setiap sertifikat */
-  margin-right: 20px; /* Spasi antar item */
-}
-
-/* Sembunyikan tombol jika tidak perlu */
-#prevBtn,
-#nextBtn {
-  z-index: 1;
-}
 /* Project HTML */
 body.body-project {
   min-height: 100vh;
