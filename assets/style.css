@@ -425,6 +425,29 @@ footer p {
   }
 }
 
+#certificate .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+#certificate .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+#certificate .card-title {
+  font-size: 1.2rem;
+  color: #333;
+}
+#certificate .btn-outline-info {
+  border-color: lightseagreen;
+  color: lightseagreen;
+  transition: color 0.3s, border-color 0.3s;
+}
+#certificate .btn-outline-info:hover {
+  background-color: lightseagreen;
+  color: white;
+}
+
 /* Project HTML */
 body.body-project {
   min-height: 100vh;
